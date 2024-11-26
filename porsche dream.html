@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porsche Shop</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+        header {
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            font-family: 'Helvetica', sans-serif;
+        }
+        .logo {
+            font-size: 2em;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        nav {
+            position: relative;
+        }
+        .menu {
+            cursor: pointer;
+            font-size: 1.2em;
+            color: #fff;
+        }
+        .container {
+            padding: 20px;
+        }
+        .car-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .car-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .car-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .car-info {
+            padding: 15px;
+            text-align: center;
+        }
+        .car-info h2 {
+            font-size: 1.5em;
+            margin: 0 0 10px;
+            font-family: 'Arial', sans-serif;
+        }
+        .car-info p {
+            margin: 5px 0;
+        }
+        .price {
+            font-weight: bold;
+            color: #555;
+        }
+        .details-link {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 15px;
+            background-color: #3498db;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        .details-link:hover {
+            background-color: #2980b9;
+        }
+        .car-details-section {
+            display: none;
+            background-color: #fff;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: #3498db;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        .back-link:hover {
+            background-color: #2980b9;
+        }
+        .car-details-section h1 {
+            font-size: 2em;
+            font-weight: bold;
+        }
+        .car-details-section p {
+            font-size: 1.1em;
+        }
+        .porsche-info {
+            background-color: #fff;
+            padding: 20px;
+            margin-top: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .porsche-info h2 {
+            font-size: 2em;
+            text-align: center;
+        }
+        .porsche-info p {
+            font-size: 1.1em;
+            text-align: center;
+        }
+        .car-image {
+            max-width: 600px;
+            margin: 20px auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    
+<header>
+    <div class="logo">
+        <img src="imagenes/logo.png" alt="Porsche Logo" style="height: 50px; margin-right: 10px; vertical-align: middle;">
+        Porsche Shop
+    </div>
+</header>
+
+    <div class="container">
+        <!-- Sección de los autos disponibles -->
+        <div class="car-grid">
+            <!-- Porsche 911 Carrera -->
+            <div class="car-card">
+                <img src="imagenes/911.jpg" alt="Porsche 911 Carrera" id="img-911">
+                <div class="car-info">
+                    <h2>Porsche 911 Carrera</h2>
+                    <p>Potencia: 450 HP</p>
+                    <p class="price">Precio: $120,000</p>
+                    <a href="javascript:void(0);" class="details-link" onclick="showDetails('911')">Ver detalles</a>
+                </div>
+            </div>
+            <!-- Porsche Taycan -->
+            <div class="car-card">
+                <img src="imagenes/taycan.jpg.jpg" alt="Porsche Taycan" id="img-taycan">
+                <div class="car-info">
+                    <h2>Porsche Taycan</h2>
+                    <p>Potencia: 522 HP</p>
+                    <p class="price">Precio: $105,000</p>
+                    <a href="javascript:void(0);" class="details-link" onclick="showDetails('taycan')">Ver detalles</a>
+                </div>
+            </div>
+            <!-- Porsche 718 Cayman -->
+            <div class="car-card">
+                <img src="imagenes/718cayman.jpg" alt="Porsche 718 Cayman" id="img-718cayman">
+                <div class="car-info">
+                    <h2>Porsche 718 Cayman</h2>
+                    <p>Potencia: 300 HP</p>
+                    <p class="price">Precio: $65,000</p>
+                    <a href="javascript:void(0);" class="details-link" onclick="showDetails('718cayman')">Ver detalles</a>
+                </div>
+            </div>
+            <!-- Porsche Macan -->
+            <div class="car-card">
+                <img src="imagenes/macan.jpg" alt="Porsche Macan" id="img-macan">
+                <div class="car-info">
+                    <h2>Porsche Macan</h2>
+                    <p>Potencia: 265 HP</p>
+                    <p class="price">Precio: $55,000</p>
+                    <a href="javascript:void(0);" class="details-link" onclick="showDetails('macan')">Ver detalles</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección de detalles del carro -->
+        <div id="car-details" class="car-details-section">
+            <h1 id="car-title"></h1>
+            <img id="car-detail-image" src="" alt="Imagen del carro" class="car-image">
+            <p id="car-description"></p>
+            <p id="car-price"></p>
+            <p id="car-status" style="color: red; font-weight: bold;">Agotado</p>
+            <a href="javascript:void(0);" class="back-link" onclick="hideDetails()">Volver a la tienda</a>
+        </div>
+
+        <!-- Información sobre Porsche (sección movida hacia el final) -->
+        <div class="porsche-info">
+            <h2>La Historia de Porsche</h2>
+            <p>Fundada en 1931 por Ferdinand Porsche, la marca Porsche se ha convertido en uno de los fabricantes de automóviles más icónicos del mundo, conocida por su diseño innovador y su rendimiento excepcional. Desde el legendario Porsche 911 hasta los modelos más modernos como el Taycan eléctrico, Porsche ha sido pionera en la tecnología automotriz y continúa desafiando los límites de la ingeniería.</p>
+        </div>
+    </div>
+
+    <script>
+        // Datos de los autos
+        const carDetails = {
+            "911": {
+                title: "Porsche 911 Carrera",
+                description: "El Porsche 911 Carrera es un automóvil deportivo icónico con un motor de 450 HP, ideal para la velocidad y el lujo.",
+                image: "images/911f.jpg", // Ruta de la imagen
+                price: "$120,000"
+            },
+            "taycan": {
+                title: "Porsche Taycan",
+                description: "El Porsche Taycan es un automóvil eléctrico de alto rendimiento con 522 HP, tecnología avanzada y diseño futurista.",
+                image: "images/taycanf.jpg", // Ruta de la imagen
+                price: "$105,000"
+            },
+            "718cayman": {
+                title: "Porsche 718 Cayman",
+                description: "El Porsche 718 Cayman es un coupé deportivo con un motor de 300 HP, ideal para los amantes de la velocidad.",
+                image: "images/718caymanf.jpg", // Ruta de la imagen
+                price: "$65,000"
+            },
+            "macan": {
+                title: "Porsche Macan",
+                description: "El Porsche Macan es un SUV compacto que combina la practicidad con el dinamismo de la marca Porsche.",
+                image: "images/macanf.jpg", // Ruta de la imagen
+                price: "$55,000"
+            }
+        };
+
+        // Mostrar detalles del carro
+        function showDetails(car) {
+            const details = carDetails[car];
+            document.getElementById("car-title").innerText = details.title;
+            document.getElementById("car-description").innerText = details.description;
+            document.getElementById("car-detail-image").src = details.image;
+            document.getElementById("car-price").innerText = details.price;
+            document.getElementById("car-details").style.display = "block";
+            document.body.style.overflow = "auto"; // Permitir desplazamiento
+        }
+
+        // Ocultar los detalles y volver a la tienda
+        function hideDetails() {
+            document.getElementById("car-details").style.display = "none";
+            document.body.style.overflow = "auto"; // Restaurar desplazamiento
+        }
+    </script>
+</body>
+</html>
